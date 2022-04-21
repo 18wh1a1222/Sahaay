@@ -1,0 +1,13 @@
+<h3>Login Now</h3>
+
+<form [formGroup]="UserForm" (ngSubmit)="onSubmit()">
+    <div class="col-sm-3 my-1">
+        <label for="formGroupExampleInput">Phone Number: </label>
+        <input type="text" class="form-control" placeholder="Your Phone Number" formControlName="phno">
+    </div>
+    <div class="col-sm-3 my-1">
+        <label for="formGroupExampleInput">Password: </label>
+        <input type="password" class="form-control" placeholder="Your Password"  formControlName="password">
+    </div><br>
+    <button type="submit" class="btn btn-primary" [disabled]="!UserForm.valid" style="margin-left: 80px;">Login</button>
+</form>

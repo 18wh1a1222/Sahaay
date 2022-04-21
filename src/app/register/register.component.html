@@ -1,0 +1,48 @@
+<h3>Register Now</h3>
+
+<form [formGroup]="UserForm" (ngSubmit)="onSubmit()">
+    <div class="col-sm-3 my-1">
+        <label for="formGroupExampleInput">Name: </label>
+        <input type="text" class="form-control" placeholder="Your Name" formControlName="name">
+    </div>
+    <div class="col-sm-3 my-1">
+        <label for="formGroupExampleInput">Aadhar: </label>
+        <input type="text" class="form-control" (blur)="validateAadhar()" placeholder="Your Aadhar"
+            formControlName="aadharNo">
+        <p *ngIf="validateAadhar()">AadharNo is wrong</p>
+    </div>
+    <div class="col-sm-3 my-1">
+        <label for="formGroupExampleInput">Phone Number: </label>
+        <input type="text" class="form-control" (blur)="validatePhno()" placeholder="Your Phone Number"
+            formControlName="phno">
+        <p *ngIf="validatePhno()">Phone Number is wrong</p>
+    </div>
+    <div class="col-sm-3 my-1">
+        <label for="formGroupExampleInput">Date Of Birth: </label>
+        <input type="date" class="form-control" placeholder="Your Date Of Birth" formControlName="dob">
+    </div>
+    <div class="col-sm-3 my-1">
+        <label for="formGroupExampleInput">Type: </label>
+        
+<label class="select" for="slct">
+    <select id="slct" required="required" formControlName="type">
+      <option value="" disabled="disabled" selected="selected">Type of User</option>
+      <option [ngValue]="user">User</option>
+        <option [ngValue]="volunteer">Volunteer</option>
+    </select>
+    <svg>
+      <use xlink:href="#select-arrow-down"></use>
+    </svg>
+  </label>
+  <svg class="sprites">
+    <symbol id="select-arrow-down" viewbox="0 0 10 6">
+      <polyline points="1 1 5 5 9 1"></polyline>
+    </symbol>
+  </svg>
+    </div>
+    <div class="col-sm-3 my-1">
+        <label for="formGroupExampleInput">Password: </label>
+        <input type="password" class="form-control" placeholder="Your Password" formControlName="password">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!UserForm.valid">Submit</button>
+</form>

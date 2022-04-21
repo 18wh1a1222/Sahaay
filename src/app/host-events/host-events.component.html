@@ -1,0 +1,32 @@
+<h3>Register Your Event Here</h3>
+
+<form [formGroup]="EventForm" (ngSubmit)="onSubmit()">
+    <div class="col-sm-3 my-1">
+        <label for="formGroupExampleInput">Name: </label>
+        <input type="text" class="form-control" placeholder="Event Name" formControlName="name">
+    </div>
+    <div class="form-group shadow-textarea">
+        <label for="exampleFormControlTextarea6">   Describe Your Need</label>
+        <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3"
+            placeholder="Write about your Need..." formControlName="desc" maxlength="300"></textarea>
+    </div>
+    <div class="col-sm-3 my-1">
+        <label for="formGroupExampleInput">Date of Event: </label>
+        <input type="date" class="form-control" placeholder="Your Date of Event"
+            formControlName="doe">
+        
+    </div>
+    <div class="col-sm-3 my-1">
+        <label for="formGroupExampleInput">Last Day to Register: </label>
+        <input type="date" class="form-control" formControlName="lastDay">
+    </div>
+    <div class="col-sm-3 my-1">
+        <label for="formGroupExampleInput">StartTime: </label>
+        <input type="time" class="form-control"  formControlName="startTime">
+    </div>
+    <div class="col-sm-3 my-1">
+        <label for="formGroupExampleInput">EndTime: </label>
+        <input type="time" class="form-control"  formControlName="endTime">
+    </div><br>
+    <button type="submit" class="btn btn-primary" [disabled]="!EventForm.valid" style="margin-left: 120px;">Submit</button>
+</form>

@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4" *ngFor="let need of needsList">
+            <div class="card card-margin">
+                <div class="card-header no-border">
+                    <h5 class="card-title">Need</h5>
+                </div>
+                <div class="card-body pt-0">
+                    <div class="widget-49">
+                        <div class="widget-49-title-wrapper">
+                            <div class="widget-49-date-primary">
+                                <span class="widget-49-date-day">09</span>
+                                <span class="widget-49-date-month">apr</span>
+                            </div>
+                            <div class="widget-49-meeting-info">
+                                <span class="widget-49-pro-title">{{need.type}}</span>
+                                <span class="widget-49-meeting-time">Amount: {{ need.pay}}</span>
+                            </div>
+                        </div>
+                        <ol class="widget-49-meeting-points">
+                            <li class="widget-49-meeting-item"><span>{{need.desc}}</span></li>
+                        </ol>
+                        <div class="widget-49-meeting-action">
+                            <button routerLink="connect" class="btn btn-sm btn-flash-border-primary" (click)="goToConnect(need)">Take Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
